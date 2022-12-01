@@ -504,3 +504,16 @@ h4 {
     background-color: #5b8edf;
     padding: 10px 15px;
 }
+
+#pwd,
+#registerPassword,
+#registerRepeatPassword {
+    position: relative;
+}
+
+.fa-eye {
+    position: absolute;
+    top: 28%;
+    right: 4%;
+    cursor: pointer;
+}

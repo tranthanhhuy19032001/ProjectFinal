@@ -21,10 +21,6 @@
                 <li class="nav-item border-end">
                     <a class="nav-link active bg-success fa fa-user" href="/user/information">Thông tin tài khoản</a>
                 </li>
-
-                <li class="nav-item border-end bg-secondary">
-                    <a class="nav-link" href="#">Hộp thư báo</a>
-                </li>
             </ul>
         </nav>
 
@@ -70,13 +66,24 @@
                         </tr>
 
                         <tr>
-                            <td>Địa chỉ</td>
-                            <td>
-                                <div class="input-group" style="width: 500px;">
-                                    <span class="input-group-text fa fa-address-card" style="font-size: 24px;width: 50px"></span>
-                                    <input type="text" class="form-control" id="addresslUser" name="addresslUser" value="Q7">
-                                </div>
-                            </td>
+                                <td>Mật khẩu mới</td>
+                                <td>
+                                    <div class="input-group" style="width: 500px;">
+                                        <span class="input-group-text fa fa-key" style="font-size: 24px;width: 50px"></span>
+                                        <input type="password" class="form-control" id="newPasswordUser" name="NewPasswordUser">
+                                        <i class="fa fa-eye" id="togglePassword"></i>
+                                    </div>
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>Nhập lại mật khẩu mới</td>
+                                <td>
+                                    <div class="input-group" style="width: 500px;">
+                                        <span class="input-group-text fa fa-lock" style="font-size: 24px;width: 50px"></span>
+                                        <input type="password" class="form-control" id="ConfirmNewPasswordUser" name="ConfirmNewPasswordUser">
+                                        <i class="fa fa-eye" id="togglePassword1"></i>
+                                    </div>
+                                </td>
                         </tr>
 
                         <tr>
@@ -95,6 +102,31 @@
 
     </div>
 </div>
+
+<script>
+    const showPassword = document.querySelector("#togglePassword");
+    const passwordField = document.querySelector("#newPasswordUser");
+
+
+    showPassword.addEventListener("click", function() {
+        this.classList.toggle("fa-eye-slash");
+        const type = passwordField.getAttribute("type") ===
+            "password" ? "text" : "password";
+        passwordField.setAttribute("type", type);
+
+    })
+
+    const showPassword1 = document.querySelector("#togglePassword1");
+    const passwordField1 = document.querySelector("#ConfirmNewPasswordUser");
+
+
+    showPassword1.addEventListener("click", function() {
+        this.classList.toggle("fa-eye-slash");
+        const type = passwordField1.getAttribute("type") ===
+            "password" ? "text" : "password";
+        passwordField1.setAttribute("type", type);
+    })
+</script>
 
 
 
