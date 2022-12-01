@@ -1,0 +1,516 @@
+body {
+    background-color: #fff;
+    color: #000;
+    font: normal normal 100% Roboto, Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+.search-top {
+    padding: 20px;
+}
+
+.hcm-bg {
+    background-image: url(/images/hcm-bg.jpg);
+    background-repeat: no-repeat;
+    height: 120px;
+    /* width: 50%; */
+    background-size: 95%;
+}
+
+.hcm a:link {
+    text-decoration: none;
+}
+
+.hcm {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.chothuevip h2 {
+    color: red;
+}
+
+.hcm a {
+    display: block;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.hori {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e9d8f4;
+    position: fixed;
+    top: 0;
+    position: sticky;
+    width: 100%;
+}
+
+.nav-item a:hover {
+    background-color: green;
+}
+
+.nav-link {
+    color: white;
+}
+
+.hn-bg {
+    background-image: url(/images/hn-bg.jpg);
+    background-repeat: no-repeat;
+    height: 120px;
+    /* float: left; */
+    background-size: 100%;
+}
+
+.hn {
+    float: right;
+    padding: 10px;
+    padding-left: 10px;
+    width: 50%;
+}
+
+.hn a:link {
+    text-decoration: none;
+}
+
+.hn a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.news-item {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px dashed;
+    padding: 10px;
+    display: inline-flexbox;
+}
+
+.news-item .news-thumb {
+    overflow: hidden;
+    min-height: 150px;
+    border-radius: 5px;
+}
+
+.news-item .new-thumb {
+    width: 250px;
+    float: left;
+    position: relative;
+}
+
+.news-item .news-info {
+    width: calc(100% - 165px);
+    float: left;
+    padding-left: 15px;
+    overflow: hidden;
+}
+
+.news-item .news-info .news-title {
+    font-size: 14px;
+    overflow: hidden;
+    /* position: relative; */
+    margin-top: 0;
+}
+
+.list-all-new .news-item .news-info .area {
+    margin-bottom: 2px;
+    color: #888;
+    font-size: 13px;
+}
+
+.list-all-new .news-item .news-info .localtion {
+    color: #888;
+    font-size: 13px;
+}
+
+.news-title a {
+    overflow: hidden;
+    max-height: 70px;
+    display: block;
+    text-decoration: none;
+    color: red;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.mgt-5 {
+    margin-top: 5px;
+}
+
+.price {
+    padding: 5px;
+}
+
+.panel {
+    border: 1px solid rgb(167, 164, 164);
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.list-all-new {
+    padding: 15px;
+}
+
+.item-vip2 {
+    min-height: 100%;
+}
+
+.sidebarbox-title {
+    font-size: 20px;
+    background-color: rgb(232, 222, 222);
+    padding: 8px;
+    color: green;
+}
+
+.sidebar-body a {
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar-body li {
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-bottom: 1px dashed;
+}
+
+.sidebar-body a:hover {
+    color: rgb(70, 12, 229);
+    text-decoration: underline;
+}
+
+.sidebar-body li:last-child {
+    border: none;
+}
+
+.title-footer {
+    color: rgb(246, 246, 24);
+}
+
+.content-footer {
+    color: white;
+}
+
+.content-footer a {
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.content-footer ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.content-footer a:hover {
+    color: rgb(236, 13, 13);
+    text-decoration: underline;
+}
+
+.footer {
+    padding-top: 15px;
+}
+
+.contact-footer {
+    padding: 10px;
+    padding-left: 0px;
+}
+
+.method-pay img {
+    border-radius: 5px;
+}
+
+.copyright {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    /* padding: 20px; */
+    padding: 5px 0px;
+    margin-top: 5px;
+}
+
+.path ol {
+    display: inline;
+    list-style: none;
+}
+
+.path li {
+    text-decoration: none;
+    display: inline;
+    float: left;
+}
+
+.path a {
+    text-decoration: none;
+}
+
+.detail-room-item {
+    float: right;
+}
+
+.rating {
+    float: right;
+    color: yellow;
+}
+
+.description p {
+    overflow: hidden;
+    max-height: 40px;
+}
+
+.detail-room {
+    overflow: hidden;
+    max-height: 50px;
+}
+
+.item .information {
+    padding-left: 15px;
+}
+
+.title-room a {
+    text-decoration: none;
+}
+
+.title-room a:hover {
+    text-decoration: underline;
+}
+
+.item {
+    border-bottom: 1px dashed;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.search-room {
+    border: 1px solid whitesmoke;
+    box-shadow: inset;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 20px;
+    color: green;
+    padding: 10px;
+    font-weight: 10px;
+    padding-left: 15px;
+}
+
+.search-room-body-list-group {
+    padding: 10px 15px;
+}
+
+.search-room-body-list-group select {
+    padding: 8px 10px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.search-room-list-link ul {
+    padding: 8px 10px;
+    width: 100%;
+    /* margin-bottom: 12px; */
+    list-style-type: none;
+}
+
+.search-room-list-link li {
+    border-bottom: 1px dashed;
+    padding: 10px 0px;
+}
+
+.search-room-list-link li:last-child {
+    border-bottom: none;
+    margin-top: 0px;
+    padding-bottom: 0px;
+}
+
+.search-room-list-link li a {
+    list-style-type: none;
+    text-decoration: none;
+    color: #000;
+}
+
+.search-room-list-link li:hover {
+    background-color: #d1ccd4;
+}
+
+.search-room-list-link li a:hover {
+    color: red;
+}
+
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
+.dropdown-menu li {
+    margin-top: 10px;
+}
+
+.welcome-user {
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.welcome-user a {
+    text-decoration: none;
+}
+
+.welcome-user a:hover {
+    color: blue;
+}
+
+.singup-signin .nav-item .nav-link {
+    background-color: #e3ebf7;
+    padding: 15px 0px;
+    color: #000;
+}
+
+.singup-signin .nav-item {
+    margin: 15px 0px;
+}
+
+.singup-signin ul li:first-child {
+    margin-right: 6px;
+}
+
+.singup-signin ul li:last-child {
+    margin-left: 6px;
+}
+
+.singup-signin .nav-item .active {
+    color: blue;
+    background-color: #5b8edf;
+}
+
+.tab-content .text-center button {
+    background-color: #e5e7ea;
+}
+
+.tab-content .text-center button:hover {
+    background-color: #9fa1a3;
+}
+
+.singup-signin .container {
+    background-color: #f5f5f9;
+    padding: 20px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#breadcrumb ol>li:after {
+    content: '';
+    font: normal normal normal 14px/1 FontAwesome;
+    display: inline-block;
+    padding: 0 5px;
+    color: #888;
+}
+
+#breadcrumb ol>li {
+    display: inline;
+}
+
+#breadcrumb ol>li:last-child::after {
+    content: ' ';
+}
+
+.information-detail-room table {
+    border: 1px solid;
+}
+
+.information-detail-room table td {
+    border: 1px solid;
+    padding: 10px;
+}
+
+.information-detail-room table tr:first-child td:last-child {
+    border-right: none;
+}
+
+.information-detail-room .title-info {
+    background-color: rgb(241, 237, 237);
+    color: #000;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.block-content {
+    border: 1px solid rgb(239, 228, 228);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.input-post {
+    width: 100%;
+    padding: 5px;
+}
+
+.information-room,
+.address-room,
+.upload-image,
+.guide-post {
+    border: 1px solid;
+    margin-top: 20px;
+}
+
+.upload-image {
+    margin-bottom: 15px;
+}
+
+.information-room .row,
+.address-room .row,
+.upload-image .row {
+    padding: 10px;
+    /* border: 1px solid; */
+}
+
+#upLoadFileId {
+    padding: 20px;
+}
+
+.thong-tin-tai-khoan ul li {
+    display: inline-block;
+    background-color: gray;
+}
+
+.thong-tin-tai-khoan {
+    border: 1px solid black;
+}
+
+.thong-tin-user .title {
+    padding: 15px;
+}
+
+.input-group-addon {
+    background-color: #5b8edf;
+    padding: 10px 15px;
+}
+
+.access-page {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background-color: #9a25e8;
+    position: fixed;
+    top: 0;
+    position: sticky;
+    width: 100%;
+}

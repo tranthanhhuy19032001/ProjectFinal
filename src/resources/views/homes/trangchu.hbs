@@ -1,0 +1,189 @@
+<div class="container" style="width: 70%;">
+    <form method="GET" action="/research">
+        <div class="bg-info search-top">
+            <h3 class="title">Tìm kiếm nhanh</h3>
+            <div class="row">
+                <div class="content col-md-12">
+                    <div class="row ">
+
+                        <div class="col-lg-2 col-md-6">
+                            <select id="ddlPostCate" name="CategoryId" class="form-select">
+                                <option value="">Loại tin</option>
+                                <option value="1">Cho thuê phòng trọ</option>
+                                <option value="2">Cho thuê căn hộ</option>
+                                <option value="3">Cho thuê nhà nguyên căn</option>
+                                <option value="4">Tìm người ở ghép</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-2 col-md-6">
+                            <select id="ProvinceId" name="ProvinceName" class="form-select">
+                                <option value="">TP</option>
+                                <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                                
+                            </select>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <select id="DistrictId" name="DistrictName" class="form-select">
+                                <option value="">Quận</option>
+                                <option value="Quận 1">Quận 1</option>
+                                <option value="Quận 2">Quận 2</option>
+                                <option value="Quận 3">Quận 3</option>
+                                <option value="Quận 4">Quận 4</option>
+                                <option value="Quận 5">Quận 5</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-2 col-md-6">
+                            <select id="PriceId" name="PriceName" class="form-select">
+                                <option value="">Mức giá</option>
+                                <option value="price1">Dưới 1 triệu</option>
+                                <option value="price2">1 triệu - 2 triệu</option>
+                                <option value="price3">2 triệu - 3 triệu</option>
+                                <option value="price4">3 triệu - 5 triệu</option>
+                                <option value="price5">5 triệu - 10 triệu</option>
+                                <option value="price6">Trên 10 triệu</option>
+                            </select>
+
+
+                        </div>
+
+                        <div class="col-lg-2 col-md-6">
+                            <select id="AreaId" name="AreaName" class="form-select">
+                                <option>Diện tích</option>
+                                <option value="A1">Dưới 20 m2</option>
+                                <option value="A2">20 - 30 m2</option>
+                                <option value="A3">30 - 40 m2</option>
+                                <option value="A4">40 - 50 m2</option>
+                                <option value="A5">Trên 50m2</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-2 col-md-6" style="padding-right: 5px;">
+                            <button class="btn btn-warning btn-block" id="btnSearch" style="padding-right: 45px;"><i class="fa fa-search"></i> Tìm kiếm</button>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="access-page">
+
+        <div class="page-header">
+            <h3 style="font-size: 20px;">Cho thuê phòng trọ, tìm nhà trọ nhanh chóng</h3>
+            <p sztyle="font-size:14px ;">Website đăng tin cho thuê phòng trọ, thuê căn hộ, thuê nhà nguyên căn, hiệu quả cao với hơn 3.000.000 lượt truy cập mỗi tháng, cùng tốc độ tải trang cực nhanh.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="pt-2">
+                    <div style="visibility: hidden;">hi</div>
+                    <h2 style="font-size: 20px; color: red; border-left-style: solid; padding-left: 10px;">CHO THUÊ VIP</h2>
+                </div>
+                
+                {{!-- {{#each homes}} --}}
+                <div class="panel panel-default post-list">
+                    {{!--  --}}
+                    <div class="panel-body">
+                        <div class="list-all-new">
+                            <div class="row" style="margin-top: 15px;">
+                                {{#each homes}}
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-12">
+                                    <div class="news-item item-vip2">
+                                        <div class="news-thumb">
+                                            <a href="/{{this.slug}}">
+                                                <img src='/img/{{this.images}}'  alt="{{this.title}}"
+                                                    class="lazyload">
+                                            </a>
+                                        </div>
+                                        <div class="news-info">
+                                            <h3 class="news-title">
+                                                <a href="{{this.slug}}">{{this.title}}</a>
+                                            </h3>
+                                            <div class="area mgt-5">
+                                                <span><i class="fa fa-area-chart"></i> <b>{{this.area}} m²</b></span> <span class="rating" style="color: #fc0">
+                                                        <i class="fa fa-star"></i>
+                                                </span>
+                                                <div>
+                                                    <div class="localtion">
+                                                        <span><i class="fa fa-map-marker"></i> <b><a href="#">{{this.dictrict}} {{this.province}}</a></b></span>
+                                                    </div>
+                                                    <div class="price mgt-5 bg-success text-bg-danger">
+                                                        <span>{{this.money}} Triệu/tháng</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{!-- {{/each}} --}}
+
+                {{!--  --}}
+
+            </div>
+            <div class="col-md-12 col-lg-4">
+                    <div class="sidebar-box">
+                        <h3 class="sidebarbox-title">
+                            <span>Danh mục cho thuê</span>
+                        </h3>
+                        <div class="sidebar-body">
+                            <ul>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 3</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 4</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 5</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 6</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 7</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 8</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 9</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 10</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 11</a>
+                                </li>
+                                <li>
+                                    <a href="#">Cho thuê phòng trọ quận 12</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <img src="/img/voucher.jpg" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+

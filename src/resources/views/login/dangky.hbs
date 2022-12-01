@@ -1,0 +1,86 @@
+
+<div class="singup-signin mt-lg-5">
+    <div class="container" style="width: 40%;">
+        <div class="path pt-2">
+            <ol>
+                <li class="">
+                    <a href="/">Trang chủ</a>
+                    <span class="p-2">></span>
+                </li>
+                <li>
+                    <a href="/dangky">Đăng Ký</a>
+                </li>
+            </ol>
+        </div>
+        <div class="mt-2">
+            <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab-login" data-mdb-toggle="pill" href="/dangnhap" role="tab" aria-controls="pills-login" aria-selected="true">Login</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="tab-register" data-mdb-toggle="pill" href="/dangky" role="tab" aria-controls="pills-register" aria-selected="false">Register</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <form method="POST" action="/user/register">
+                    <div class="mb-3 mt-3">
+                        <!-- <label for="email">Email:</label> -->
+                        <div class="input-group">
+                            <span class="input-group-text fa fa-user" style="font-size: 24px;width: 50px"></span>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <!-- <label for="email">Email:</label> -->
+                        <div class="input-group">
+                            <span class="input-group-text fa fa-envelope" style="font-size: 24px;width: 50px"></span>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <!-- <label for="pwd">Password:</label> -->
+                        <div class="input-group">
+                            <span class="input-group-text fa fa-lock" style="width: 50px;font-size: 24px;"></span>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <!-- <label for="pwd">Password:</label> -->
+                        <div class="input-group">
+                            <span class="input-group-text fa fa-repeat" style="width: 50px;font-size: 24px;"></span>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Enter confirm password" name="confirmPassword" required>
+                        </div>
+                    </div>
+                    <div class="form-check d-flex justify-content mb-4">
+                        <input class="form-check-input" type="checkbox" id="registerCheck" checked aria-describedby="registerCheckHelpText" required/>
+                        <label class="form-check-label" for="registerCheck">I have read and agree to the terms</label>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-4 mt-2" style="width: 100%;">Sign up</button>
+
+                    <p class="text-center">or</p>
+
+                    <div class="text-center mb-3">
+                        <p>Sign in with:</p>
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="fa fa-facebook"></i>
+                            </button>
+
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="fa fa-google"></i>
+                            </button>
+
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="fa fa-twitter"></i>
+                            </button>
+
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                                <i class="fa fa-github"></i>
+                            </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

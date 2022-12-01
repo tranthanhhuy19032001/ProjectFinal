@@ -1,0 +1,100 @@
+<div class="container" style="width:70% ;">
+    <div class="row">
+        <div class="col-md-8">
+            <a href="#">
+                <img src="/images/logo.png" alt="">
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+<div class="thong-tin-user">
+    <div class="container" style="width: 70%; margin-top: 20px;">
+        <nav class="navbar navbar-expand-lg text-white-100" style="font-size:20px; padding: 0px; margin: 0px;">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item border-end bg-secondary">
+                    <a class="nav-link fa fa-list-alt" href="/user/stored">Quản lý tin</a>
+                </li>
+
+                <li class="nav-item border-end">
+                    <a class="nav-link active bg-success fa fa-user" href="/user/information">Thông tin tài khoản</a>
+                </li>
+
+                <li class="nav-item border-end bg-secondary">
+                    <a class="nav-link" href="#">Hộp thư báo</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div>
+            <div class="title">
+                <h5>THÔNG TIN TÀI KHOẢN</h3>
+            </div>
+        </div>
+        {{#if currentUser}}
+        {{#with currentUser}}
+        <div class="profile-user-form container" style="width: 70%;">
+            <form action="">
+                <div class="profile-user-form-info">
+                    <table>
+                        <tr>
+                            <td>Mã tài khoản</td>
+                            <td>
+                                <div class="input-group" style="width: 500px;">
+                                    <span class="input-group-text" style="font-size: 24px;width: 50px">#</span>
+                                    <input type="text" class="form-control" id="idUser" name="idUser" value="1" disabled="true">
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Email</td>
+                            <td>
+                                <div class="input-group" style="width: 500px;">
+                                    <span class="input-group-text fa fa-envelope" style="font-size: 24px;width: 50px"></span>
+                                    <input type="text" class="form-control" id="emailUser" name="emailUser" value="{{this.email}}" disabled="true">
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Họ tên</td>
+                            <td>
+                                <div class="input-group" style="width: 500px;">
+                                    <span class="input-group-text fa fa-user" style="font-size: 24px;width: 50px"></span>
+                                    <input type="text" class="form-control" id="namelUser" name="namelUser" value="{{this.name}}">
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Địa chỉ</td>
+                            <td>
+                                <div class="input-group" style="width: 500px;">
+                                    <span class="input-group-text fa fa-address-card" style="font-size: 24px;width: 50px"></span>
+                                    <input type="text" class="form-control" id="addresslUser" name="addresslUser" value="Q7">
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button type="submit" class="btn btn-primary mb-4 mt-2" style="width: 100%;">Cập nhật</button>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </form>
+        </div>
+        {{/with}}
+        {{/if}}
+
+    </div>
+</div>
+
+
+

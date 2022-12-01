@@ -1,0 +1,77 @@
+<div class="container" style="width:70%;">
+    <div class="row">
+        <div class="col-md-8">
+            <a href="/">
+                <img src="/img/logo.png" alt="">
+            </a>
+        </div>
+        {{#if currentUser}}
+        <div class="col-md-4 d-flex justify-content-end" style="margin-top:20px ;">
+            <div class="welcome-user">
+                {{#with currentUser}}
+                <p>Xin chào, <strong><a href="/user/information">{{this.name}}</a></strong></p>
+                {{/with}}
+            </div>
+
+            <div class="user-dropdown">
+                <button class="btn text-light bg-danger dropdown-toggle" type="button" id="user-dropdown-id" data-bs-toggle="dropdown">Quản lý tài khoản</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" rel="nofollow" href="/user/information"><i class="fa fa-user"></i> Thông tin tài khoản</a></li>
+                    <li><a class="dropdown-item" rel="nofollow" href="/create" title="Đăng tin"><i class="fa fa-plus-circle" aria-hidden="true"></i> Đăng tin</a></li>
+                    <li><a class="dropdown-item" rel="nofollow" href="/user/stored" title="Quản lý tin"><i class="fa fa-list-alt" aria-hidden="true"></i> Quản lý tin đăng</a></li>
+                    <li role="separator" class="divider"></li>
+                    <a class="dropdown-item" rel="nofollow" href="/user/logout" title="Thoát"><i class="fa fa-sign-out" aria-hidden="true"></i> Thoát</a>
+                </ul>
+            </div>
+        </div>
+        {{else}}
+        <div class="col-md-4 d-flex justify-content-end" style="margin-top:20px ;">
+            <div style="margin-right:10px ;">
+                <a class="btn btn-outline-primary" href="/dangky">
+                    <i class="fa fa-user"></i> Đăng ký
+                </a>
+            </div>
+            <div>
+                <a class="btn btn-outline-success" href="/dangnhap">
+                    <i class="fa fa-user"></i> Đăng nhập
+                </a>
+            </div>
+        </div>
+        {{/if}}
+        
+    </div>
+</div>
+
+<div class="hori bg-primary">
+    <div class="container" style="width:70%;">
+        <nav class="navbar navbar-expand-lg text-white-100" style="font-size:20px; padding: 0px; margin: 0px;">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item border-end">
+                    <a class="nav-link active bg-success" href="/">Trang chủ</a>
+                </li>
+                <li class="nav-item border-end">
+                    <a class="nav-link" href="/chothuephongtro">Cho thuê phòng trọ</a>
+                </li>
+                <li class="nav-item border-end">
+                    <a class="nav-link" href="#menu2">Cho thuê căn hộ</a>
+                </li>
+                <li class="nav-item border-end">
+                    <a class="nav-link" href="#menu3">Nhà nguyên căn</a>
+                </li>
+                <li class="nav-item border-end">
+                    <a class="nav-link" href="#menu4">Tìm ngưởi ở ghép</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/huongdan">Hướng dẫn</a>
+                </li>
+
+            </ul>
+            <div class="d-flex bg-success">
+                    <a class="btn" href="/create">
+                        <i class="fa fa-pencil-square-o"></i> Đăng tin
+                    </a>
+            </div>
+        </nav>
+
+    </div>
+</div>

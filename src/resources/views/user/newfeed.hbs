@@ -1,0 +1,60 @@
+<div class="thong-tin-user">
+    <div class="container" style="width: 70%; margin-top: 20px;">
+        <nav class="navbar navbar-expand-lg text-white-100" style="font-size:20px; padding: 0px; margin: 0px;">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item border-end bg-secondary">
+                    <a class="nav-link fa fa-list-alt active bg-success" href="/user/stored">Quản lý tin</a>
+                </li>
+
+                <li class="nav-item border-end bg-secondary">
+                    <a class="nav-link fa fa-user" href="/user/information">Thông tin tài khoản</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div>
+            <div class="title">
+                <h5>QUẢN LÝ TIN ({{count}})</h3>
+            </div>
+        </div>
+
+        <DIV class="quan-ly-tin-user">
+            <div class="row">
+                <div class="col-md-8 col-xs-12"></div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="input-group">
+                        <input type="search" name="search" class="form-control" placeholder="Tìm theo mã tin">
+                        <span class="input-group-addon" id="btnSearch"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center text-black bg-info" style="font-size: 18px;">
+                        <td>Mã tin</td>
+                        <td>Tiêu đề</td>
+                        <td class="text-center">Trạng thái</td>
+                        <td class="text-center">Thao tác</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each homes}}
+                    {{log homes}}
+                    <tr class="text-center">
+                        <td>{{sum @index 1}}</td>
+                        <td>{{this.title}}</td>
+                        <td>Đã đăng</td>
+                        <td>
+                            <a href=""><button class="btn btn-danger" id="btnDelete">Xóa</button></a>
+                            <a href="/user/{{this._id}}/edit"><button class="btn btn-secondary" id="btnEdit">Edit</button></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </DIV>
+
+    </div>
+</div>
+
+
