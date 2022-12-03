@@ -1,20 +1,18 @@
 const jwt = require("jsonwebtoken");
-const { promisify } = require('util');
-const User = require('../models/UserModel');
-const { mongooseToObject } = require('../../until/mongoose');
-const { showAlert } = require('../../until/alerts');
+const { promisify } = require("util");
+const User = require("../models/UserModel");
+const { mongooseToObject } = require("../../until/mongoose");
+const { showAlert } = require("../../until/alerts");
 
-
-const signToken = (id) => jwt.sign({ id }, 'secret', { expiresIn: 60 * 60 });
+const signToken = (id) => jwt.sign({ id }, "secret", { expiresIn: 60 * 60 });
 
 const createSendToken = (user, req, res, next) => {
     const token = signToken(user._id);
 
     const cookieOptions = {
         expires: new Date(Date.now() + 60 * 60 * 60 * 24 * 7),
-        httpOnly: true
+        httpOnly: true,
     };
-
 
     // if (process.env.NODE_ENV === "production") {
     //   cookieOptions.secure = true;
@@ -30,12 +28,10 @@ const createSendToken = (user, req, res, next) => {
     // res.redirect('partials/header', {
     //     user: res.locals.user
     // })
-    res.redirect('/')
-
+    res.redirect("/");
 };
 
 class AuthController {
-
     async signup(req, res, next) {
         // res.json(req.body);
         const { name, email, password, passwordConfirm } = req.body;
@@ -54,20 +50,16 @@ class AuthController {
         const newUser = await User.create(req.body);
         newUser.password = undefined;
         newUser.passwordConfirm = undefined;
-        res.redirect('/dangnhap')
-
-    };
+        res.redirect("/dangnhap");
+    }
 
     async isLoggedIn(req, res, next) {
-        console.log("22222222222222222222222222")
+        // console.log("22222222222222222222222222")
         if (req.cookies.jwt) {
             try {
-                console.log("3333333333333333333")
-                    //1) Verification token
-                const decoded = await promisify(jwt.verify)(
-                    req.cookies.jwt,
-                    'secret'
-                );
+                // console.log("3333333333333333333")
+                //1) Verification token
+                const decoded = await promisify(jwt.verify)(req.cookies.jwt, "secret");
                 // console.log(decoded);
                 //2) Check if user still exist
                 const currentUser = await User.findById(decoded.id);
@@ -83,8 +75,8 @@ class AuthController {
 
                 return next();
             } catch (err) {
-                console.log("444444444444444444444444")
-                console.log(err)
+                console.log("444444444444444444444444");
+                console.log(err);
                 return next();
             }
         }
@@ -92,7 +84,6 @@ class AuthController {
     }
 
     async login(req, res, next) {
-
         const { email, password } = req.body;
         //1)Check if email and password exist
         if (!email || !password) {
@@ -116,7 +107,7 @@ class AuthController {
 
         // console.log(user);
         //3) If everything is OK, send token to client
-        createSendToken(user, req, res, next)
+        createSendToken(user, req, res, next);
 
         // res.render('homes/trangchu', {
         //     user: mongooseToObject(user)
@@ -126,15 +117,15 @@ class AuthController {
         // })
     }
     logout(req, res, next) {
-        res.clearCookie('jwt');
+        res.clearCookie("jwt");
 
         //ERROR: ...
         // res.cookie("jwt", "loggedout", {
         //   expires: new Date(Date.now() + 10 * 1000),
         //   httpOnly: true,
         // });
-        res.redirect('/')
-    };
+        res.redirect("/");
+    }
     async protect(req, res, next) {
         console.log("3 protect");
         try {
@@ -152,16 +143,16 @@ class AuthController {
             console.log(token);
             if (token === null || token === undefined) {
                 console.log("not exist token");
-                return res.render('login/dangnhap')
+                return res.render("login/dangnhap");
             }
             //2) Verification token
-            const decoded = await promisify(jwt.verify)(token, 'secret');
+            const decoded = await promisify(jwt.verify)(token, "secret");
             // console.log(decoded);
 
             //3) Check if user still exist
             const currentUser = await User.findById(decoded.id);
             if (!currentUser) {
-                return res.render('login/dangnhap')
+                return res.render("login/dangnhap");
             }
 
             //4) Check if user changed password after the token was issued
@@ -177,10 +168,7 @@ class AuthController {
             return next();
         }
         next();
-    };
-
-
-
+    }
 }
 
 module.exports = new AuthController();

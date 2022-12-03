@@ -1,9 +1,9 @@
-const Home = require('../models/HomeModel');
-const { multipleMongooseToObject } = require('../../until/mongoose');
-const { mongooseToObject } = require('../../until/mongoose');
-const sharp = require('sharp');
-const multer = require('multer');
-const jwt = require('jsonwebtoken');
+const Home = require("../models/HomeModel");
+const { multipleMongooseToObject } = require("../../until/mongoose");
+const { mongooseToObject } = require("../../until/mongoose");
+const sharp = require("sharp");
+const multer = require("multer");
+const jwt = require("jsonwebtoken");
 
 // const upload = multer({
 //     storage: multerStorage,
@@ -22,10 +22,10 @@ const multerStorage = multer.memoryStorage();
 //Filter image (chua toi uu)
 const multerFilter = (req, file, cb) => {
     // console.log(file.mimetype);
-    if (file.mimetype === 'image/jpeg') {
+    if (file.mimetype === "image/jpeg") {
         cb(null, true);
     } else {
-        cb(new Error('File is not image', 400), false);
+        cb(new Error("File is not image", 400), false);
     }
 };
 
@@ -43,45 +43,45 @@ class HomeController {
     // }
     // [GET] /huongdan
     huongdan(req, res, next) {
+            // const numberPage = 3;
             const currentUser = res.locals.user;
-            res.render('huongdan', {
+            res.render("huongdan", {
                 currentUser: mongooseToObject(currentUser),
             });
         }
         // [GET] /
     show(req, res, next) {
-        console.log("555555555555555555555555555555555")
+        // const numberPage = 1;
+        console.log("555555555555555555555555555555555");
+        const path = "homes/trangchu";
         const currentUser = res.locals.user;
         console.log(currentUser);
         Home.find({})
             .then((homes) =>
-                res.render('homes/trangchu', {
+                res.render(path, {
                     homes: multipleMongooseToObject(homes),
                     currentUser: mongooseToObject(currentUser),
-                }),
+                })
             )
-            .catch(error =>
-                console.log(error)
-            );
+            .catch((error) => console.log(error));
     }
 
     // [GET] /create
     create(req, res, next) {
         const currentUser = res.locals.user;
-        res.render('homes/dangtin', {
+        res.render("homes/dangtin", {
             currentUser: mongooseToObject(currentUser),
         });
-
     }
 
     //[POST] /create/store
 
     store(req, res, next) {
-        upload.single('upFile')(req, res, (next) => {
+        upload.single("upFile")(req, res, (next) => {
             // console.log(req.file);
             sharp(req.file.buffer)
                 .resize(214, 148)
-                .toFormat('jpeg')
+                .toFormat("jpeg")
                 .jpeg({ quality: 90 })
                 .toFile(`./src/public/img/${req.file.originalname}`);
 
@@ -94,7 +94,7 @@ class HomeController {
 
             home
                 .save()
-                .then(() => res.redirect('/'))
+                .then(() => res.redirect("/"))
                 .catch((error) => console.log(error));
         });
     }
@@ -104,12 +104,13 @@ class HomeController {
             const currentUser = res.locals.user;
             Home.find({})
                 .then((homes) =>
-                    res.render('homes/phongtro', {
+                    res.render("homes/phongtro", {
                         homes: multipleMongooseToObject(homes),
                         currentUser: mongooseToObject(currentUser),
-                    }),
+                    })
                 )
                 .catch(next);
+            // console.log("666666666666666", res);
         }
         //[GET] /:slug
     chitietPT(req, res, next) {
@@ -118,31 +119,30 @@ class HomeController {
             const currentUser = res.locals.user;
             Home.findOne({ slug: req.params.slug })
                 .then((home) =>
-                    res.render('homes/chitiet', {
+                    res.render("homes/chitiet", {
                         currentUser: mongooseToObject(currentUser),
                         home: mongooseToObject(home),
-                    }),
+                    })
                 )
                 .catch(next);
         }
         //[GET] /dangnhap
     dangnhap(req, res, next) {
-            res.render('login/dangnhap');
+            res.render("login/dangnhap");
         }
         //[GET] /dangky
     dangky(req, res, next) {
-        res.render('login/dangky');
+        res.render("login/dangky");
     }
     research(req, res, next) {
         console.log(req.query);
         console.log(req.query.CategoryId);
-        if (req.query.CategoryId == '1' || req.query.CategoryId == '') {
-            return res.redirect('/chothuephongtro')
+        if (req.query.CategoryId == "1" || req.query.CategoryId == "") {
+            return res.redirect("/chothuephongtro");
         }
 
-        res.json(req.body)
+        res.json(req.body);
     }
-
 }
 
 module.exports = new HomeController();
