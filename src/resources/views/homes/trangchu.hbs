@@ -31,6 +31,9 @@
                                 <option value="Quận 3">Quận 3</option>
                                 <option value="Quận 4">Quận 4</option>
                                 <option value="Quận 5">Quận 5</option>
+                                <option value="Quận 6">Quận 6</option>
+                                <option value="Quận 7">Quận 7</option>
+                                <option value="Quận 8">Quận 8</option>
                             </select>
                         </div>
 
@@ -90,7 +93,7 @@
                         <div class="list-all-new">
                             <div class="row" style="margin-top: 15px;">
                                 {{#each homes}}
-                                <div class="col-xs-12 col-sm-6 col-md-6 col-12">
+                                <div class="col-lg-6 col-sm-12 col-md-12">
                                     <div class="news-item item-vip2">
                                         <div class="news-thumb">
                                             <a href="/{{this.slug}}">
@@ -104,14 +107,14 @@
                                             </h3>
                                             <div class="area mgt-5">
                                                 <span><i class="fa fa-area-chart"></i> <b>{{this.area}} m²</b></span> <span class="rating" style="color: #fc0">
-                                                        <i class="fa fa-star"></i>
+                                                    
                                                 </span>
                                                 <div>
                                                     <div class="localtion">
                                                         <span><i class="fa fa-map-marker"></i> <b><a href="#">{{this.dictrict}} {{this.province}}</a></b></span>
                                                     </div>
-                                                    <div class="price mgt-5 bg-success text-bg-danger">
-                                                        <span>{{this.money}} Triệu/tháng</span>
+                                                    <div class="price mgt-5">
+                                                        <span class="bg-success text-bg-danger pt-2 pr-2 pb-2">{{this.money}} Triệu/tháng</span>
                                                     </div>
                                                 </div>
                                             </div>

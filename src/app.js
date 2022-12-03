@@ -14,8 +14,8 @@ db.connect();
 
 app.use(express.static(path.join(__dirname, 'public')));
 console.log(path.join(__dirname, 'public'));
-console.log("11111111111111111111")
-    // HTTP logger
+// console.log("11111111111111111111")
+// HTTP logger
 app.use(morgan('combined'));
 app.use(cookieParser());
 

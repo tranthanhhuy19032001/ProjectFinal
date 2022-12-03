@@ -22,7 +22,7 @@
                 </li>
             </ul>
             <div class="tab-content">
-                <form method="POST" action="/user/register">
+                <form method="POST" action="/user/register" onsubmit="return checkPw()" name="myForm">
                     <div class="mb-3 mt-3">
                         <!-- <label for="email">Email:</label> -->
                         <div class="input-group">
@@ -109,5 +109,16 @@
             "password" ? "text" : "password";
         passwordField1.setAttribute("type", type);
     })
+
+    {{!-- Kiểm tra nhập mật khẩu --}}
+    function checkPw(form) {
+        let pw1 = document.forms["myForm"]["password"].value;
+        let pw2 = document.forms["myForm"]["confirmPassword"].value;
+
+        if(pw1 != pw2) {
+            alert("Mật khẩu xác nhận không chính xác!");
+            return false;
+        }
+    }
 </script>
 

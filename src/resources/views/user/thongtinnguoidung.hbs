@@ -32,7 +32,7 @@
         {{#if currentUser}}
         {{#with currentUser}}
         <div class="profile-user-form container" style="width: 70%;">
-            <form action="">
+            <form action="" onsubmit="return checkPw()" name="myForm">
                 <div class="profile-user-form-info">
                     <table>
                         <tr>
@@ -93,7 +93,6 @@
                             </td>
                         </tr>
                     </table>
-
                 </div>
             </form>
         </div>
@@ -126,6 +125,23 @@
             "password" ? "text" : "password";
         passwordField1.setAttribute("type", type);
     })
+
+
+    {{!-- Hiệu ứng sẽ so sánh hai chuỗi do người dùng nhập vào có giống nhau hay không. --}}
+    function checkPw(form) {
+        let nameUser = document.forms["myForm"]["namelUser"].value;
+        let pw1 = document.forms["myForm"]["NewPasswordUser"].value;
+        let pw2 = document.forms["myForm"]["ConfirmNewPasswordUser"].value;
+
+        if(nameUser ==""){
+            alert("Họ tên không được để trống!");
+            return false;
+        }
+        if(pw1 != pw2) {
+            alert("Mật khẩu xác nhận không chính xác!");
+            return false;
+        }
+    }
 </script>
 
 

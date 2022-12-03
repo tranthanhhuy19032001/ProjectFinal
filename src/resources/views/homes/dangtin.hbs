@@ -78,7 +78,7 @@
 
                                 <div class="col-lg-6 col-md-12">
                                     <label for="">Giá cho thuê<span class="text-danger">*</span></label>
-                                    <input type="number" name="money" id="money" placeholder="VD: 2 triệu 500 nghìn thì nhập 2.5" class="input-post">
+                                    <input step="any" name="money" id="money" placeholder="VD: 2 triệu thì nhập 2" class="input-post">
                                 </div>
 
                                 <div class="col-lg-6 col-md-12">
@@ -152,7 +152,7 @@
             
         </div>
         {{#if currentUser}}
-        <button type="submit" class="btn btn-primary">Đăng tin</button>
+        <button type="submit" class="btn btn-success mb-2 p-2">Đăng tin</button>
         {{/if}}
     </form>
 </div>
