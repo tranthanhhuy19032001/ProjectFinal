@@ -1,190 +1,283 @@
+<div class="hori bg-primary">
+  <div class="container" style="width:70%;">
+    <nav
+      class="navbar navbar-expand-lg text-white-100"
+      style="font-size:20px; padding: 0px; margin: 0px;"
+    >
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item border-end">
+          <a class="nav-link" href="/">Trang chủ</a>
+        </li>
+        <li class="nav-item border-end">
+          <a class="nav-link active bg-success" href="/chothuephongtro">Cho thuê
+            phòng trọ</a>
+        </li>
+        <li class="nav-item border-end">
+          <a class="nav-link" href="#menu2">Cho thuê căn hộ</a>
+        </li>
+        <li class="nav-item border-end">
+          <a class="nav-link" href="#menu3">Nhà nguyên căn</a>
+        </li>
+        <li class="nav-item border-end">
+          <a class="nav-link" href="#menu4">Tìm ngưởi ở ghép</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/huongdan">Hướng dẫn</a>
+        </li>
 
-<div class="container" style="width: 70%;">
-    <div id="breadcrumb" class="path pt-2 pb-2">
-        <ol>
-            <li class="">
-                <a href="/">Trang chủ</a>
-
-            </li>
-            <li>
-                <a href="/chothuephongtro">Cho thuê phòng trọ</a>
-
-            </li>
-            <li>
-                <a href="">Hồ Chí Minh</a>
-
-            </li>
-            <li>
-                <a href="">Quận 7</a>
-            </li>
-        </ol>
-    </div>
-
-    <div class="access_page">
-        <div class="page-content">
-            <h2 class="title-detail-room">Cho thuê phòng trọ quận 7</h2>
-            <div class="row">
-                {{#with home}}
-                <div class="col-md-12 col-lg-8">
-                    <div class="information-detail-room mb-4">
-                        <table>
-                            <tr>
-                                <td class="title-info">Địa chỉ:</td>
-                                <td>{{this.address}}</td>
-
-                            </tr>
-                            <tr>
-                                <td class="title-info">Giá cho thuê:</td>
-                                <td>{{this.money}} triệu/tháng</td>
-                                <td class="title-info">Diện tích:</td>
-                                <td>{{this.area}} m²</td>
-                            </tr>
-                            <tr>
-                                <td class="title-info">Liên hệ:</td>
-                                <td>{{this.contactName}}</td>
-                                <td class="title-info">Điện thoại:</td>
-                                <td>{{this.phone}}</td>
-
-                            </tr>
-                        </table>
-                    </div>
-
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                            </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/img/{{this.images}}" class="d-block w-100" alt="..." style="height: 500px;">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/img/{{this.images}}" class="d-block w-100" alt="..." style="height: 500px;">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/img/{{this.images}}" class="d-block w-100" alt="..." style="height: 500px;">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="block-content" id="_motachitiet">
-                        <div class="post_summary_wrapper">
-                            <div class="post_summary-content">
-                                <span class="block_headline">Thông tin chi tiết</span> Cho thuê phòng full nội thất tại Phú Nhuận
-                                <br>📍Vị trí trung tâm TP. Thông Phan Đăng Lưu, Hồ Văn Huê, Nguyễn Kiệm
-                                <br>📍Khu dân cư an ninh, yên tĩnh. Gần chợ
-                                <br>🏡 Giờ giấc tự do, không chung chủ. Xe để trong nhà
-                                <br>🏡 Cửa sổ lớn, nội thất cơ bản ( máy lạnh, nệm, tủ, bàn, bếp…)
-                                <br>💡Điện 3,5k, nước 100k, Wf + dịch vụ 130k
-                                <br>📌 Phòng trống ở liền
-                                <br>📌 Chính chủ không môi giới
-                                <p>----------------------------------------------</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{/with}}
-
-                <div class="col-md-12 col-lg-4 search">
-                    <div class="search-room" style="background-color: #C8D8EF;">
-                        <div class="search-room-title text-bg-light">
-                            <h4>Tìm kiếm phòng trọ</h4>
-                        </div>
-                        <div class="search-room-body">
-                            <div class="search-room-body-list-group">
-                                <select name="search-rent-room" id="search-rent-room-id">
-                                    <option value=" 1 ">Cho thuê phòng trọ</option>
-                                    <option value="2 ">Cho thuê căn hộ</option>
-                                    <option value="3 ">Cho thuê nhà nguyên căn</option>
-                                    <option value="4 ">Tìm người ở ghép</option>
-                                </select>
-
-                                <select name="search-rent-room" id="city-id">
-                                    <option value="city">Tỉnh/Thành phố</option>
-                                    <option value="HCM">Hồ Chí Minh</option>
-                                    <option value="HN">Hà Nội</option>
-                                    
-                                </select>
-
-                                <select name="search-rent-room" id="district-id">
-                                    <option value="district">Quận</option>
-                                    <option value="Q1">Quận 1</option>
-                                    <option value="Q2 ">Quận 2</option>
-                                    <option value="Q3 ">Quận 3</option>
-                                    <option value="Q4">Quận 4</option>
-                                    <option value="Q5 ">Quận 5</option>
-                                    <option value="Q6 ">Quận 6</option>
-                                    <option value="Q7 ">Quận 7</option>
-                                </select>
-
-                                <select name="search-rent-room" id="price-id">
-                                    <option value="price">Mức giá</option>
-                                    <option value="price1">Dưới 1 triệu</option>
-                                    <option value="price2">1 triệu - 2 triệu</option>
-                                    <option value="price3">2 triệu - 3 triệu</option>
-                                    <option value="price4">3 triệu - 5 triệu</option>
-                                    <option value="price5">5 triệu - 10 triệu</option>
-                                    <option value="price6">Trên 10 triệu</option>
-                                </select>
-
-                                <select name="search-rent-room" id="area-id">
-                                    <option value="0">Diện tích</option>
-                                    <option value="1">Dưới 20 m2</option>
-                                    <option value="2">20 - 30 m2</option>
-                                    <option value="3">30 - 40 m2</option>
-                                    <option value="4">40 - 50 m2</option>
-                                    <option value="5">Trên 50m2</option>
-                                
-                                </select>
-
-                                <button type="button" id="btn-search-id" name="btn-search" class="btn btn-primary">Tìm kiếm</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="search-room">
-                        <div class="search-room-title text-bg-light">
-                            <h4>Cho thuê phòng trọ tại Hồ Chí Minh</h4>
-                        </div>
-                        <div class="search-room-list-link">
-                            <ul class="list-district">
-                                <li>
-                                    <a href="#">Cho thuê phòng trọ Quận 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cho thuê phòng trọ Quận 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cho thuê phòng trọ Quận 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cho thuê phòng trọ Quận 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cho thuê phòng trọ Quận 1</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cho thuê phòng trọ Quận 1</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      </ul>
+      <div class="d-flex bg-success">
+        <a class="btn" href="/create">
+          <i class="fa fa-pencil-square-o"></i>
+          Đăng tin
+        </a>
+      </div>
+    </nav>
+  </div>
 </div>
+<div class="container" style="width: 70%;">
+  <div id="breadcrumb" class="path pt-2 pb-2">
+    <ol>
+      <li class="">
+        <a href="/">Trang chủ</a>
 
+      </li>
+      <li>
+        <a href="/chothuephongtro">Cho thuê phòng trọ</a>
 
+      </li>
+      <li>
+        <a href="">Hồ Chí Minh</a>
 
+      </li>
+      <li>
+        <a href="">Quận 7</a>
+      </li>
+    </ol>
+  </div>
+
+  <div class="access_page">
+    <div class="page-content">
+      <h2 class="title-detail-room">Cho thuê phòng trọ quận 7</h2>
+      <div class="row">
+        {{#with home}}
+          <div class="col-md-12 col-lg-8">
+            <div class="information-detail-room mb-4">
+              <table>
+                <tr>
+                  <td class="title-info">Địa chỉ:</td>
+                  <td>{{this.address}}</td>
+
+                </tr>
+                <tr>
+                  <td class="title-info">Giá cho thuê:</td>
+                  <td>{{this.money}} triệu/tháng</td>
+                  <td class="title-info">Diện tích:</td>
+                  <td>{{this.area}} m²</td>
+                </tr>
+                <tr>
+                  <td class="title-info">Liên hệ:</td>
+                  <td>{{this.contactName}}</td>
+                  <td class="title-info">Điện thoại:</td>
+                  <td>{{this.phone}}</td>
+
+                </tr>
+              </table>
+            </div>
+
+            <div
+              id="carouselExampleIndicators"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="/img/{{this.images}}"
+                    class="d-block w-100"
+                    alt="..."
+                    style="height: 500px;"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/img/{{this.images}}"
+                    class="d-block w-100"
+                    alt="..."
+                    style="height: 500px;"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/img/{{this.images}}"
+                    class="d-block w-100"
+                    alt="..."
+                    style="height: 500px;"
+                  />
+                </div>
+              </div>
+
+            </div>
+
+            <div class="block-content" id="_motachitiet">
+              <div class="post_summary_wrapper">
+                <div class="post_summary-content">
+                  <span class="block_headline">Thông tin chi tiết</span>
+                  Cho thuê phòng full nội thất tại Phú Nhuận
+                  <br />📍Vị trí trung tâm TP. Thông Phan Đăng Lưu, Hồ Văn Huê,
+                  Nguyễn Kiệm
+                  <br />📍Khu dân cư an ninh, yên tĩnh. Gần chợ
+                  <br />🏡 Giờ giấc tự do, không chung chủ. Xe để trong nhà
+                  <br />🏡 Cửa sổ lớn, nội thất cơ bản ( máy lạnh, nệm, tủ, bàn,
+                  bếp…)
+                  <br />💡Điện 3,5k, nước 100k, Wf + dịch vụ 130k
+                  <br />📌 Phòng trống ở liền
+                  <br />📌 Chính chủ không môi giới
+                  <p>----------------------------------------------</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/with}}
+
+        <div class="col-md-12 col-lg-4 search">
+          <div class="search-room" style="background-color: #C8D8EF;">
+            <div class="search-room-title text-bg-light">
+              <h4>Tìm kiếm phòng trọ</h4>
+            </div>
+            <div class="search-room-body">
+              <div class="search-room-body-list-group">
+                <select name="search-rent-room" id="search-rent-room-id">
+                  <option value=" 1 ">Cho thuê phòng trọ</option>
+                  <option value="2 ">Cho thuê căn hộ</option>
+                  <option value="3 ">Cho thuê nhà nguyên căn</option>
+                  <option value="4 ">Tìm người ở ghép</option>
+                </select>
+
+                <select name="search-rent-room" id="city-id">
+                  <option value="city">Tỉnh/Thành phố</option>
+                  <option value="HCM">Hồ Chí Minh</option>
+                  <option value="HN">Hà Nội</option>
+
+                </select>
+
+                <select name="search-rent-room" id="district-id">
+                  <option value="district">Quận</option>
+                  <option value="Q1">Quận 1</option>
+                  <option value="Q2 ">Quận 2</option>
+                  <option value="Q3 ">Quận 3</option>
+                  <option value="Q4">Quận 4</option>
+                  <option value="Q5 ">Quận 5</option>
+                  <option value="Q6 ">Quận 6</option>
+                  <option value="Q7 ">Quận 7</option>
+                </select>
+
+                <select name="search-rent-room" id="price-id">
+                  <option value="price">Mức giá</option>
+                  <option value="price1">Dưới 1 triệu</option>
+                  <option value="price2">1 triệu - 2 triệu</option>
+                  <option value="price3">2 triệu - 3 triệu</option>
+                  <option value="price4">3 triệu - 5 triệu</option>
+                  <option value="price5">5 triệu - 10 triệu</option>
+                  <option value="price6">Trên 10 triệu</option>
+                </select>
+
+                <select name="search-rent-room" id="area-id">
+                  <option value="0">Diện tích</option>
+                  <option value="1">Dưới 20 m2</option>
+                  <option value="2">20 - 30 m2</option>
+                  <option value="3">30 - 40 m2</option>
+                  <option value="4">40 - 50 m2</option>
+                  <option value="5">Trên 50m2</option>
+
+                </select>
+
+                <button
+                  type="button"
+                  id="btn-search-id"
+                  name="btn-search"
+                  class="btn btn-primary"
+                >Tìm kiếm</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="search-room">
+            <div class="search-room-title text-bg-light">
+              <h4>Cho thuê phòng trọ tại Hồ Chí Minh</h4>
+            </div>
+            <div class="search-room-list-link">
+              <ul class="list-district">
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 1</a>
+                </li>
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 1</a>
+                </li>
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 1</a>
+                </li>
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 1</a>
+                </li>
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 1</a>
+                </li>
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 1</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -52,10 +52,10 @@ class HomeController {
         // [GET] /
     show(req, res, next) {
         // const numberPage = 1;
-        console.log("555555555555555555555555555555555");
+        // console.log("555555555555555555555555555555555");
         const path = "homes/trangchu";
         const currentUser = res.locals.user;
-        console.log(currentUser);
+        // console.log(currentUser);
         Home.find({})
             .then((homes) =>
                 res.render(path, {

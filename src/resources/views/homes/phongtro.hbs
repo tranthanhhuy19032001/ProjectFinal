@@ -1,154 +1,210 @@
+<div class="hori bg-primary">
+  <div class="container" style="width:70%;">
+    <nav
+      class="navbar navbar-expand-lg text-white-100"
+      style="font-size:20px; padding: 0px; margin: 0px;"
+    >
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item border-end">
+          <a class="nav-link" href="/">Trang chủ</a>
+        </li>
+        <li class="nav-item border-end">
+          <a class="nav-link active bg-success" href="/chothuephongtro">Cho thuê
+            phòng trọ</a>
+        </li>
+        <li class="nav-item border-end">
+          <a class="nav-link" href="#menu2">Cho thuê căn hộ</a>
+        </li>
+        <li class="nav-item border-end">
+          <a class="nav-link" href="#menu3">Nhà nguyên căn</a>
+        </li>
+        <li class="nav-item border-end">
+          <a class="nav-link" href="#menu4">Tìm ngưởi ở ghép</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/huongdan">Hướng dẫn</a>
+        </li>
+
+      </ul>
+      <div class="d-flex bg-success">
+        <a class="btn" href="/create">
+          <i class="fa fa-pencil-square-o"></i>
+          Đăng tin
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
 <div class="container" style="width:70% ;">
-        <div id="breadcrumb" class="path pt-2 pb-2">
-            <ol>
-                <li class="">
-                    <a href="/">Trang chủ</a>
-                    <!-- <span class="p-2">></span> -->
+  <div id="breadcrumb" class="path pt-2 pb-2">
+    <ol>
+      <li class="">
+        <a href="/">Trang chủ</a>
+        <!-- <span class="p-2">></span> -->
+      </li>
+      <li>
+        <a href="/chothuephongtro">Cho thuê phòng trọ</a>
+      </li>
+    </ol>
+  </div>
+  <div class="access_page">
+    <div class="page_header">
+      <h5 style="font-size: 24px;">Cho thuê phòng trọ trọ giá rẻ mới nhất 2022</h5>
+      <p>Cho thuê phòng trọ, tìm nhà trọ giá rẻ, không chung chủ, an ninh và
+        nhiều tiện nghi mới nhất tại Việt Nam. Đăng tin cho thuê phòng trọ nhanh
+        chóng và hiệu quả cao.</p>
+    </div>
+    <hr />
+    <div class="page-content">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="post-list">
+            <div class="list-room">
+              {{!  }}
+              {{#each homes}}
+                <div class="item d-flex">
+                  <div class="picture">
+                    <a href="/{{this.slug}}">
+                      <img
+                        src="/img/{{this.images}}"
+                        alt="{{this.title}}"
+                        class="float-start rounded"
+                        width="200"
+                        height="150"
+                      />
+                    </a>
+                  </div>
+                  <div class="information">
+                    <div class="title-room pb-2">
+                      <a
+                        class="text-danger"
+                        href="/{{this.slug}}"
+                      >{{this.title}}</a>
+                    </div>
+                    <div class="description">
+                      <p>{{this.description}}</p>
+                    </div>
+                    <div class="detail-room">
+                      <div class="clearfix pb-2">
+                        <span class="price-room text-success"><b>{{this.money}}
+                            Triệu/tháng</b></span>
+                        <div class="rating">
+                          <li class="fa fa-star"></li>
+                          <li class="fa fa-star"></li>
+                          <li class="fa fa-star"></li>
+                        </div>
+                      </div>
+                      <div class="">
+                        <span>Diện tich <b>{{this.area}} m²</b></span>
+                        <span>Khu vực
+                          <b><a href="/cho-thue-phong-tro-quan-4">
+                              {{this.dictrict}},
+                              {{this.province}}
+                            </a></b></span>
+                        <div
+                          class="detail-room-item"
+                          style="font-style: italic;"
+                        ><span></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+              {{!  }}
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-lg-4 search">
+          <div class="search-room" style="background-color: #C8D8EF;">
+            <div class="search-room-title text-bg-light">
+              <h4>Tìm kiếm phòng trọ</h4>
+            </div>
+            <div class="search-room-body">
+              <div class="search-room-body-list-group">
+                <select name="search-rent-room" id="search-rent-room-id">
+                  <option value=" 1 ">Cho thuê phòng trọ</option>
+                  <option value="2 ">Cho thuê căn hộ</option>
+                  <option value="3 ">Cho thuê nhà nguyên căn</option>
+                  <option value="4 ">Tìm người ở ghép</option>
+                </select>
+
+                <select name="search-rent-room" id="city-id">
+                  <option value="city">Tỉnh/Thành phố</option>
+                  <option value="HCM">Hồ Chí Minh</option>
+
+                </select>
+
+                <select name="search-rent-room" id="district-id">
+                  <option value="district">Quận</option>
+                  <option value="Q1">Quận 1</option>
+                  <option value="Q2 ">Quận 2</option>
+                  <option value="Q3 ">Quận 3</option>
+                  <option value="Q4">Quận 4</option>
+                  <option value="Q5 ">Quận 5</option>
+                  <option value="Q6 ">Quận 6</option>
+                  <option value="Q7 ">Quận 7</option>
+                </select>
+
+                <select name="search-rent-room" id="price-id">
+                  <option value="price">Mức giá</option>
+                  <option value="price1">Dưới 1 triệu</option>
+                  <option value="price2">1 triệu - 2 triệu</option>
+                  <option value="price3">2 triệu - 3 triệu</option>
+                  <option value="price4">3 triệu - 5 triệu</option>
+                  <option value="price5">5 triệu - 10 triệu</option>
+                  <option value="price6">Trên 10 triệu</option>
+                </select>
+
+                <select name="search-rent-room" id="area-id">
+                  <option value="0">Diện tích</option>
+                  <option value="1">Dưới 20 m2</option>
+                  <option value="2">20 - 30 m2</option>
+                  <option value="3">30 - 40 m2</option>
+                  <option value="4">40 - 50 m2</option>
+                  <option value="5">Trên 50m2</option>
+
+                </select>
+
+                <button
+                  type="button"
+                  id="btn-search-id"
+                  name="btn-search"
+                  class="btn btn-primary"
+                >Tìm kiếm</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="search-room">
+            <div class="search-room-title text-bg-light">
+              <h4>Cho thuê phòng trọ tại Hồ Chí Minh</h4>
+            </div>
+            <div class="search-room-list-link">
+              <ul class="list-district">
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 1</a>
                 </li>
                 <li>
-                    <a href="/chothuephongtro">Cho thuê phòng trọ</a>
+                  <a href="#">Cho thuê phòng trọ Quận 2</a>
                 </li>
-            </ol>
-        </div>
-        <div class="access_page">
-            <div class="page_header">
-                <h5 style="font-size: 24px;">Cho thuê phòng trọ trọ giá rẻ mới nhất 2022</h5>
-                <p>Cho thuê phòng trọ, tìm nhà trọ giá rẻ, không chung chủ, an ninh và nhiều tiện nghi mới nhất tại Việt Nam. Đăng tin cho thuê phòng trọ nhanh chóng và hiệu quả cao.</p>
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 3</a>
+                </li>
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 4</a>
+                </li>
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 5</a>
+                </li>
+                <li>
+                  <a href="#">Cho thuê phòng trọ Quận 6</a>
+                </li>
+              </ul>
             </div>
-            <hr>
-            <div class="page-content">
-                <div class="row">
-                    <div class="col-md-12 col-lg-8">
-                        <div class="post-list">
-                            <div class="list-room">
-                                {{!--  --}}
-                                {{#each homes}}
-                                <div class="item d-flex">
-                                    <div class="picture">
-                                        <a href="/{{this.slug}}">
-                                            <img src="/img/{{this.images}}" alt="{{this.title}}" class="float-start rounded"
-                                                width="200" height="150">
-                                        </a>
-                                    </div>
-                                    <div class="information">
-                                        <div class="title-room pb-2">
-                                            <a class="text-danger" href="/{{this.slug}}">{{this.title}}</a>
-                                        </div>
-                                        <div class="description">
-                                            <p>{{this.description}}</p>
-                                        </div>
-                                        <div class="detail-room">
-                                            <div class="clearfix pb-2">
-                                                <span class="price-room text-success"><b>{{this.money}} Triệu/tháng</b></span>
-                                                <div class="rating">
-                                                    <li class="fa fa-star"></li>
-                                                    <li class="fa fa-star"></li>
-                                                    <li class="fa fa-star"></li>
-                                                </div>
-                                            </div>
-                                            <div class="">
-                                                <span>Diện tich <b>{{this.area}} m²</b></span>
-                                                <span>Khu vực <b><a href="/cho-thue-phong-tro-quan-4">
-                                                {{this.dictrict}}, {{this.province}}
-                                                </a></b></span>
-                                                <div class="detail-room-item" style="font-style: italic;"><span></span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{/each}}
-                                {{!--  --}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 col-lg-4 search">
-                        <div class="search-room" style="background-color: #C8D8EF;">
-                            <div class="search-room-title text-bg-light">
-                                <h4>Tìm kiếm phòng trọ</h4>
-                            </div>
-                            <div class="search-room-body">
-                                <div class="search-room-body-list-group">
-                                    <select name="search-rent-room" id="search-rent-room-id">
-                                        <option value=" 1 ">Cho thuê phòng trọ</option>
-                                        <option value="2 ">Cho thuê căn hộ</option>
-                                        <option value="3 ">Cho thuê nhà nguyên căn</option>
-                                        <option value="4 ">Tìm người ở ghép</option>
-                                    </select>
-
-                                    <select name="search-rent-room" id="city-id">
-                                        <option value="city">Tỉnh/Thành phố</option>
-                                        <option value="HCM">Hồ Chí Minh</option>
-                                        
-                                    </select>
-
-                                    <select name="search-rent-room" id="district-id">
-                                        <option value="district">Quận</option>
-                                        <option value="Q1">Quận 1</option>
-                                        <option value="Q2 ">Quận 2</option>
-                                        <option value="Q3 ">Quận 3</option>
-                                        <option value="Q4">Quận 4</option>
-                                        <option value="Q5 ">Quận 5</option>
-                                        <option value="Q6 ">Quận 6</option>
-                                        <option value="Q7 ">Quận 7</option>
-                                    </select>
-
-                                    <select name="search-rent-room" id="price-id">
-                                        <option value="price">Mức giá</option>
-                                        <option value="price1">Dưới 1 triệu</option>
-                                        <option value="price2">1 triệu - 2 triệu</option>
-                                        <option value="price3">2 triệu - 3 triệu</option>
-                                        <option value="price4">3 triệu - 5 triệu</option>
-                                        <option value="price5">5 triệu - 10 triệu</option>
-                                        <option value="price6">Trên 10 triệu</option>
-                                    </select>
-
-                                    <select name="search-rent-room" id="area-id">
-                                        <option value="0">Diện tích</option>
-                                        <option value="1">Dưới 20 m2</option>
-                                        <option value="2">20 - 30 m2</option>
-                                        <option value="3">30 - 40 m2</option>
-                                        <option value="4">40 - 50 m2</option>
-                                        <option value="5">Trên 50m2</option>
-                                    
-                                    </select>
-
-                                    <button type="button" id="btn-search-id" name="btn-search" class="btn btn-primary">Tìm kiếm</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="search-room">
-                            <div class="search-room-title text-bg-light">
-                                <h4>Cho thuê phòng trọ tại Hồ Chí Minh</h4>
-                            </div>
-                            <div class="search-room-list-link">
-                                <ul class="list-district">
-                                    <li>
-                                        <a href="#">Cho thuê phòng trọ Quận 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cho thuê phòng trọ Quận 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cho thuê phòng trọ Quận 3</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cho thuê phòng trọ Quận 4</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cho thuê phòng trọ Quận 5</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Cho thuê phòng trọ Quận 6</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-   
+  </div>
+</div>
