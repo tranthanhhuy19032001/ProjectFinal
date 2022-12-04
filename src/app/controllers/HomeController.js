@@ -140,6 +140,9 @@ class HomeController {
         if (req.query.CategoryId == "1" || req.query.CategoryId == "") {
             return res.redirect("/chothuephongtro");
         }
+        // if (req.query.DistrictName == "Quận 7" || req.query.CategoryId == "") {
+        //     return res.redirect("/phongtro");
+        // }
 
         res.json(req.body);
     }

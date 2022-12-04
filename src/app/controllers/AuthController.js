@@ -6,6 +6,14 @@ const { showAlert } = require("../../until/alerts");
 
 const signToken = (id) => jwt.sign({ id }, "secret", { expiresIn: 60 * 60 });
 
+//
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const bodyParser = require("body-parser");
+const alerts = require("../../until/alerts");
+const app = express();
+
 const createSendToken = (user, req, res, next) => {
     const token = signToken(user._id);
 
@@ -17,7 +25,6 @@ const createSendToken = (user, req, res, next) => {
     // if (process.env.NODE_ENV === "production") {
     //   cookieOptions.secure = true;
     // }
-
     res.locals.user = user;
     console.log(res.locals.user);
     user.password = undefined;
@@ -87,21 +94,25 @@ class AuthController {
         const { email, password } = req.body;
         //1)Check if email and password exist
         if (!email || !password) {
-            return next(new Error("Email or Password are not exist"));
+            return res.render("login/dangnhapsai");
         }
         //2)Check if user exists && password are correct
         const user = await User.findOne({ email }).select("+password");
         console.log(user);
         if (!user) {
-            return next(
-                new Error("Your email is not exist! Please re-enter your email!")
-            );
+            return res.render("login/dangnhapsai");
         }
         //error: because if User.findOne({ email }).select('+password') NOT EXIST
         // const correct = await user.correctPassword(password, user.password);
 
         if (!email || !(await user.correctPassword(password, user.password))) {
-            return next(new Error("Email or Password are not correct", 401));
+            // return next(new Error("Email or Password are not correct", 401));
+            // alerts("Sai roi!");
+            return res.render("login/dangnhapsai");
+
+            // res.status(401).showAlert({ error: "User does not exist" });
+            // res.showAlert("Email or Password are not correct");
+            // req.flash("error", "Error!");
             // return showAlert("error", "Email or password are not exist!");
         }
 
