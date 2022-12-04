@@ -1,215 +1,152 @@
 <div class="hori bg-primary">
-  <div class="container" style="width:70%;">
-    <nav
-      class="navbar navbar-expand-lg text-white-100"
-      style="font-size:20px; padding: 0px; margin: 0px;"
-    >
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item border-end">
-          <a class="nav-link" href="/">Trang chủ</a>
-        </li>
-        <li class="nav-item border-end">
-          <a class="nav-link" href="/chothuephongtro">Cho thuê phòng trọ</a>
-        </li>
-        <li class="nav-item border-end">
-          <a class="nav-link" href="#menu2">Cho thuê căn hộ</a>
-        </li>
-        <li class="nav-item border-end">
-          <a class="nav-link" href="#menu3">Nhà nguyên căn</a>
-        </li>
-        <li class="nav-item border-end">
-          <a class="nav-link" href="#menu4">Tìm ngưởi ở ghép</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/huongdan">Hướng dẫn</a>
-        </li>
+    <div class="container" style="width:70%;">
+        <nav class="navbar navbar-expand-lg text-white-100" style="font-size:20px; padding: 0px; margin: 0px;">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item border-end">
+                    <a class="nav-link" href="/">Trang chủ</a>
+                </li>
+                <li class="nav-item border-end">
+                    <a class="nav-link" href="/chothuephongtro">Cho thuê phòng trọ</a>
+                </li>
+                <li class="nav-item border-end">
+                    <a class="nav-link" href="#menu2">Cho thuê căn hộ</a>
+                </li>
+                <li class="nav-item border-end">
+                    <a class="nav-link" href="#menu3">Nhà nguyên căn</a>
+                </li>
+                <li class="nav-item border-end">
+                    <a class="nav-link" href="#menu4">Tìm ngưởi ở ghép</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/huongdan">Hướng dẫn</a>
+                </li>
 
-      </ul>
-      <div class="d-flex bg-success">
-        <a class="btn" href="/create">
-          <i class="fa fa-pencil-square-o"></i>
-          Đăng tin
-        </a>
-      </div>
-    </nav>
-  </div>
+            </ul>
+            <div class="d-flex bg-success">
+                <a class="btn" href="/create">
+                    <i class="fa fa-pencil-square-o"></i>
+                    Đăng tin
+                </a>
+            </div>
+        </nav>
+    </div>
 </div>
 <div class="singup-signin mt-lg-5">
-  <div class="container" style="width: 40%;">
-    <div class="path pt-2">
-      <ol>
-        <li class="">
-          <a href="/">Trang chủ</a>
-          <span class="p-2">></span>
-        </li>
-        <li>
-          <a href="/dangky">Đăng Ký</a>
-        </li>
-      </ol>
+    <div class="container" style="width: 40%;">
+        <div class="path pt-2">
+            <ol>
+                <li class="">
+                    <a href="/">Trang chủ</a>
+                    <span class="p-2">></span>
+                </li>
+                <li>
+                    <a href="/dangky">Đăng Ký</a>
+                </li>
+            </ol>
+        </div>
+        <div class="mt-2">
+            <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="tab-login" data-mdb-toggle="pill" href="/dangnhap" role="tab"
+                        aria-controls="pills-login" aria-selected="true">Login</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="tab-register" data-mdb-toggle="pill" href="/dangky" role="tab"
+                        aria-controls="pills-register" aria-selected="false">Register</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <form method="POST" action="/user/register" onsubmit="return checkPw()" name="myForm">
+                    <div class="mb-3 mt-3">
+                        <!-- <label for="email">Email:</label> -->
+                        <div class="input-group">
+                            <span class="input-group-text fa fa-user" style="font-size: 24px;width: 50px"></span>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name"
+                                required />
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <!-- <label for="email">Email:</label> -->
+                        <div class="input-group">
+                            <span class="input-group-text fa fa-envelope" style="font-size: 24px;width: 50px"></span>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email"
+                                name="email" required />
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <!-- <label for="pwd">Password:</label> -->
+                        <div class="input-group">
+                            <span class="input-group-text fa fa-lock" style="width: 50px;font-size: 24px;"></span>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password"
+                                name="password" required />
+                            <i class="fa fa-eye" id="togglePassword"></i>
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <!-- <label for="pwd">Password:</label> -->
+                        <div class="input-group">
+                            <span class="input-group-text fa fa-repeat" style="width: 50px;font-size: 24px;"></span>
+                            <input type="password" class="form-control" id="confirmPassword"
+                                placeholder="Enter confirm password" name="confirmPassword" required />
+                            <i class="fa fa-eye" id="togglePassword1"></i>
+                        </div>
+                    </div>
+                    <div class="form-check d-flex justify-content mb-4">
+                        <input class="form-check-input" type="checkbox" id="registerCheck" checked
+                            aria-describedby="registerCheckHelpText" required />
+                        <label class="form-check-label" for="registerCheck">I have read and
+                            agree to the terms</label>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-4 mt-2" style="width: 100%;">Sign up</button>
+
+                    <p class="text-center">or</p>
+
+                    <div class="text-center mb-3">
+                        <p>Sign in with:</p>
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                            <i class="fa fa-facebook"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                            <i class="fa fa-google"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                            <i class="fa fa-twitter"></i>
+                        </button>
+
+                        <button type="button" class="btn btn-link btn-floating mx-1">
+                            <i class="fa fa-github"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="mt-2">
-      <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a
-            class="nav-link"
-            id="tab-login"
-            data-mdb-toggle="pill"
-            href="/dangnhap"
-            role="tab"
-            aria-controls="pills-login"
-            aria-selected="true"
-          >Login</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a
-            class="nav-link active"
-            id="tab-register"
-            data-mdb-toggle="pill"
-            href="/dangky"
-            role="tab"
-            aria-controls="pills-register"
-            aria-selected="false"
-          >Register</a>
-        </li>
-      </ul>
-      <div class="tab-content">
-        <form
-          method="POST"
-          action="/user/register"
-          onsubmit="return checkPw()"
-          name="myForm"
-        >
-          <div class="mb-3 mt-3">
-            <!-- <label for="email">Email:</label> -->
-            <div class="input-group">
-              <span
-                class="input-group-text fa fa-user"
-                style="font-size: 24px;width: 50px"
-              ></span>
-              <input
-                type="text"
-                class="form-control"
-                id="name"
-                placeholder="Enter your name"
-                name="name"
-                required
-              />
-            </div>
-          </div>
-          <div class="mb-3 mt-3">
-            <!-- <label for="email">Email:</label> -->
-            <div class="input-group">
-              <span
-                class="input-group-text fa fa-envelope"
-                style="font-size: 24px;width: 50px"
-              ></span>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                placeholder="Enter your email"
-                name="email"
-                required
-              />
-            </div>
-          </div>
-          <div class="mb-3 mt-3">
-            <!-- <label for="pwd">Password:</label> -->
-            <div class="input-group">
-              <span
-                class="input-group-text fa fa-lock"
-                style="width: 50px;font-size: 24px;"
-              ></span>
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Enter password"
-                name="password"
-                required
-              />
-              <i class="fa fa-eye" id="togglePassword"></i>
-            </div>
-          </div>
-          <div class="mb-3 mt-3">
-            <!-- <label for="pwd">Password:</label> -->
-            <div class="input-group">
-              <span
-                class="input-group-text fa fa-repeat"
-                style="width: 50px;font-size: 24px;"
-              ></span>
-              <input
-                type="password"
-                class="form-control"
-                id="confirmPassword"
-                placeholder="Enter confirm password"
-                name="confirmPassword"
-                required
-              />
-              <i class="fa fa-eye" id="togglePassword1"></i>
-            </div>
-          </div>
-          <div class="form-check d-flex justify-content mb-4">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="registerCheck"
-              checked
-              aria-describedby="registerCheckHelpText"
-              required
-            />
-            <label class="form-check-label" for="registerCheck">I have read and
-              agree to the terms</label>
-
-          </div>
-          <button
-            type="submit"
-            class="btn btn-primary mb-4 mt-2"
-            style="width: 100%;"
-          >Sign up</button>
-
-          <p class="text-center">or</p>
-
-          <div class="text-center mb-3">
-            <p>Sign in with:</p>
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fa fa-facebook"></i>
-            </button>
-
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fa fa-google"></i>
-            </button>
-
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fa fa-twitter"></i>
-            </button>
-
-            <button type="button" class="btn btn-link btn-floating mx-1">
-              <i class="fa fa-github"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
 </div>
 
 <script>
-  const showPassword = document.querySelector("#togglePassword"); const
-  passwordField = document.querySelector("#password");
-  showPassword.addEventListener("click", function() {
-  this.classList.toggle("fa-eye-slash"); const type =
-  passwordField.getAttribute("type") === "password" ? "text" : "password";
-  passwordField.setAttribute("type", type); }) const showPassword1 =
-  document.querySelector("#togglePassword1"); const passwordField1 =
-  document.querySelector("#confirmPassword");
-  showPassword1.addEventListener("click", function() {
-  this.classList.toggle("fa-eye-slash"); const type =
-  passwordField1.getAttribute("type") === "password" ? "text" : "password";
-  passwordField1.setAttribute("type", type); })
+    const showPassword = document.querySelector("#togglePassword");
+    const passwordField = document.querySelector("#password");
+    showPassword.addEventListener("click", function () {
+        this.classList.toggle("fa-eye-slash");
+        const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+        passwordField.setAttribute("type", type);
+    })
+    const showPassword1 = document.querySelector("#togglePassword1"); const passwordField1 =
+        document.querySelector("#confirmPassword");
+    showPassword1.addEventListener("click", function () {
+        this.classList.toggle("fa-eye-slash"); const type =
+            passwordField1.getAttribute("type") === "password" ? "text" : "password";
+        passwordField1.setAttribute("type", type);
+    })
 
-  {{! Kiểm tra nhập mật khẩu }}
-  function checkPw(form) { let pw1 = document.forms["myForm"]["password"].value;
-  let pw2 = document.forms["myForm"]["confirmPassword"].value; if(pw1 != pw2) {
-  alert("Mật khẩu xác nhận không chính xác!"); return false; } }
+    function checkPw(form) {
+        let pw1 = document.forms["myForm"]["password"].value;
+        let pw2 = document.forms["myForm"]["confirmPassword"].value;
+        if (pw1 != pw2) {
+            alert("Mật khẩu xác nhận không chính xác!"); return false;
+        }
+    }
 </script>

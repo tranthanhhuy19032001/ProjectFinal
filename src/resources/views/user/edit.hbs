@@ -53,7 +53,7 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <select id="province" name="province"  class="form-select">
-                                        <option value="">TP</option>
+                                        <option value="{{home.province}}">{{home.province}}</option>
                                         <option value="Hồ Chí Minh">Hồ Chí Minh</option>
                                     </select>
                                 </div>
@@ -63,11 +63,15 @@
                                         <span class="text-danger">*</span>
                                     </label>
                                     <select id="dictrict" name="dictrict" class="form-select">
-                                        <option value="Q">Quận</option>
+                                        <option value="{{home.dictrict}}">{{home.dictrict}}</option>
                                         <option value="Q1">Q1</option>
                                         <option value="Q2">Q2</option>
                                         <option value="Q3">Q3</option>
                                         <option value="Q4">Q4</option>
+                                        <option value="Q5">Q5</option>
+                                        <option value="Q6">Q6</option>
+                                        <option value="Q7">Q7</option>
+                                        <option value="Q8">Q8</option>
 
                                     </select>
                                 </div>
@@ -130,7 +134,7 @@
 
                                 <div class="col-lg-6 col-md-12 ">
                                     <label for=" ">Điện thoại<span class="text-danger ">*</span></label>
-                                    <input type="number" name="phone" id="phone" class="input-post" max="10" value="{{home.phone}}">
+                                    <input type="number" name="phone" id="phone" class="input-post" value="{{home.phone}}">
                                 </div>
 
                             </div>
@@ -144,7 +148,7 @@
                                 <div class="col-lg-12">
                                     <div class="file-upload">
                                         <div class="image-upload">
-                                            <input type="file" name="upFile" id="images" multiple>
+                                            <input type="file" name="upFile" id="images" multiple">
                                             <!-- <div class="upload-item" style="background:url('https://img.thuephongtro.com/images/thumb/2022/11/11/20221111193835-ugcrj.jpg')  no-repeat scroll 0% 0%; background-color:transparent; background-size:  95px 95px " rel="20221111193835-ugcrj.jpg">
                                                 <a href="javascript:void(0)" class="upload-item-delete" title="Xóa ảnh"><img src="/images/blank.gif"></a>
                                             </div> -->
@@ -184,7 +188,7 @@
             
         </div>
         {{#if currentUser}}
-        <button type="submit" class="btn btn-primary">Đăng tin</button>
+        <button type="submit" class="btn btn-primary mb-2 p-2">Đăng tin</button>
         {{/if}}
     </form>
 </div>

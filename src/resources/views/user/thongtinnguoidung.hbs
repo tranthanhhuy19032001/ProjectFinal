@@ -63,12 +63,14 @@
         <div>
             <div class="title">
                 <h5>THÔNG TIN TÀI KHOẢN</h3>
+                <strong style="color:red;font-size: 20px;">Thay đổi mật khẩu</strong>
             </div>
         </div>
         {{#if currentUser}}
         {{#with currentUser}}
+        {{log this._id}}
         <div class="profile-user-form container" style="width: 70%;">
-            <form action="" onsubmit="return checkPw()" name="myForm">
+            <form method="POST" action="/user/{{this._id}}/change?_method=PUT" name="myForm" onsubmit="return checkPw()">
                 <div class="profile-user-form-info">
                     <table>
                         <tr>
@@ -96,11 +98,11 @@
                             <td>
                                 <div class="input-group" style="width: 500px;">
                                     <span class="input-group-text fa fa-user" style="font-size: 24px;width: 50px"></span>
-                                    <input type="text" class="form-control" id="namelUser" name="namelUser" value="{{this.name}}">
+                                    <input type="text" class="form-control" id="namelUser" name="namelUser" value="{{this.name}}" disabled="true">
                                 </div>
                             </td>
                         </tr>
-
+                         
                         <tr>
                                 <td>Mật khẩu mới</td>
                                 <td>
@@ -165,18 +167,25 @@
 
     {{!-- Hiệu ứng sẽ so sánh hai chuỗi do người dùng nhập vào có giống nhau hay không. --}}
     function checkPw(form) {
-        let nameUser = document.forms["myForm"]["namelUser"].value;
+        {{!-- let nameUser = document.forms["myForm"]["namelUser"].value; --}}
         let pw1 = document.forms["myForm"]["NewPasswordUser"].value;
         let pw2 = document.forms["myForm"]["ConfirmNewPasswordUser"].value;
 
-        if(nameUser ==""){
+        {{!-- if(nameUser ==""){
             alert("Họ tên không được để trống!");
+            return false;
+        } --}}
+
+        if(pw1 =='') {
+            alert("Vui lòng nhập mật khẩu cần thay đổi!");
             return false;
         }
         if(pw1 != pw2) {
             alert("Mật khẩu xác nhận không chính xác!");
             return false;
         }
+        alert("Cập nhật thành công!")
+        return true;
     }
 </script>
 
