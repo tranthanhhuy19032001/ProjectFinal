@@ -1,0 +1,14 @@
+Yêu cầu: Trên máy đã được cài đặt nodeJS(Em dùng version mới nhất)!
+
+Tại đường dẫn ...\PROJECTFINAL\
+
+1. Xóa folder node_modules(chứa các thư viện). Sau đó tải lại bằng lệnh
+npm install
+
+2. Lệnh chưa app:
+npm run start
+
+3. Trên trình duyệt Google nhập: http://localhost:3000/
+
+
+
